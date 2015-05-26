@@ -35,7 +35,7 @@ class CalendarTableViewCell: UITableViewCell {
 				red: CGFloat(250) / 255.0,
 				green: CGFloat(240) / 255.0,
 				blue: CGFloat(255) / 255.0,
-				alpha: CGFloat(1.0))
+				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "pitch")!
 			break
 		case .EntrepreneurTalk:
@@ -43,7 +43,7 @@ class CalendarTableViewCell: UITableViewCell {
 				red: CGFloat(230) / 255.0,
 				green: CGFloat(240) / 255.0,
 				blue: CGFloat(245) / 255.0,
-				alpha: CGFloat(0.5))
+				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "entrepreneur_talk")!
 			break
 		case .LessonsLearned:
@@ -51,7 +51,7 @@ class CalendarTableViewCell: UITableViewCell {
 				red: CGFloat(255) / 255.0,
 				green: CGFloat(245) / 255.0,
 				blue: CGFloat(230) / 255.0,
-				alpha: CGFloat(0.5))
+				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "lessons_learned")!
 			break
 		case .TeamBuilding:
@@ -59,7 +59,7 @@ class CalendarTableViewCell: UITableViewCell {
 				red: CGFloat(250) / 255.0,
 				green: CGFloat(245) / 255.0,
 				blue: CGFloat(230) / 255.0,
-				alpha: CGFloat(1.0))
+				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "team_building")!
 			break
 		case .Registration:
@@ -67,7 +67,7 @@ class CalendarTableViewCell: UITableViewCell {
 				red: CGFloat(230) / 255.0,
 				green: CGFloat(240) / 255.0,
 				blue: CGFloat(245) / 255.0,
-				alpha: CGFloat(0.5))
+				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "registration")!
 			break
 		case .AskMentor:
@@ -75,7 +75,7 @@ class CalendarTableViewCell: UITableViewCell {
 				red: CGFloat(235) / 255.0,
 				green: CGFloat(240) / 255.0,
 				blue: CGFloat(230) / 255.0,
-				alpha: CGFloat(0.5))
+				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "ask_mentor")!
 			break
 		case .OpenMeetup:
@@ -83,7 +83,7 @@ class CalendarTableViewCell: UITableViewCell {
 				red: CGFloat(250) / 255.0,
 				green: CGFloat(245) / 255.0,
 				blue: CGFloat(230) / 255.0,
-				alpha: CGFloat(0.5))
+				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "open_meetup")!
 			break
 		case .Workshop:
@@ -91,7 +91,7 @@ class CalendarTableViewCell: UITableViewCell {
 				red: CGFloat(235) / 255.0,
 				green: CGFloat(250) / 255.0,
 				blue: CGFloat(255) / 255.0,
-				alpha: CGFloat(0.5))
+				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "workshop")!
 			break
 		case .Lunch:
@@ -99,7 +99,7 @@ class CalendarTableViewCell: UITableViewCell {
 				red: CGFloat(235) / 255.0,
 				green: CGFloat(235) / 255.0,
 				blue: CGFloat(235) / 255.0,
-				alpha: CGFloat(1.0))
+				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "lunch")!
 			break
 		case .WorkSession:
@@ -107,7 +107,7 @@ class CalendarTableViewCell: UITableViewCell {
 				red: CGFloat(250) / 255.0,
 				green: CGFloat(230) / 255.0,
 				blue: CGFloat(230) / 255.0,
-				alpha: CGFloat(0.5))
+				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "work_session")!
 			break
 		case .TeamDefinition:
@@ -115,7 +115,7 @@ class CalendarTableViewCell: UITableViewCell {
 				red: CGFloat(255) / 255.0,
 				green: CGFloat(245) / 255.0,
 				blue: CGFloat(230) / 255.0,
-				alpha: CGFloat(0.5))
+				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "teams")!
 			break
 		default:

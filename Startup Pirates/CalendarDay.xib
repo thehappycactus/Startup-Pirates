@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarDay" customModule="Startup_Pirates" customModuleProvider="target">
+            <connections>
+                <outlet property="lblDay" destination="kqu-px-FQR" id="Ml1-SO-M3E"/>
+                <outlet property="view" destination="iN0-l3-epB" id="sgz-te-ha8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jbU-Fd-Igd">
+                    <rect key="frame" x="0.0" y="29" width="600" height="571"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="4k7-jG-Kws"/>
+                        <outlet property="delegate" destination="-1" id="rQl-Tu-qp5"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Day X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqu-px-FQR">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableViewCell contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="BZD-C1-yZh" customClass="CalendarTableViewCell" customModule="Startup_Pirates" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="250" width="600" height="100"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BZD-C1-yZh" id="5Xu-ar-NI9">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfv-2Z-mz5">
+                                <rect key="frame" x="8" y="8" width="231" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="End Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7S-oj-vA8">
+                                <rect key="frame" x="8" y="70" width="145" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bvu-s0-Ef1">
+                                <rect key="frame" x="8" y="39" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="KMl-Dd-bDY"/>
+                                    <constraint firstAttribute="width" constant="24" id="Qik-vt-PZL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Item Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73x-uP-z8A">
+                                <rect key="frame" x="40" y="40" width="246" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Q7S-oj-vA8" firstAttribute="bottom" secondItem="5Xu-ar-NI9" secondAttribute="bottomMargin" id="07V-Yl-4hi"/>
+                            <constraint firstItem="Q7S-oj-vA8" firstAttribute="leading" secondItem="5Xu-ar-NI9" secondAttribute="leadingMargin" id="4Ta-b3-R4N"/>
+                            <constraint firstItem="Bvu-s0-Ef1" firstAttribute="leading" secondItem="5Xu-ar-NI9" secondAttribute="leadingMargin" id="JQw-wq-F3Y"/>
+                            <constraint firstItem="73x-uP-z8A" firstAttribute="leading" secondItem="Bvu-s0-Ef1" secondAttribute="trailing" constant="8" id="UQv-sS-8gc"/>
+                            <constraint firstItem="xfv-2Z-mz5" firstAttribute="top" secondItem="5Xu-ar-NI9" secondAttribute="topMargin" id="e60-Q8-fVv"/>
+                            <constraint firstItem="xfv-2Z-mz5" firstAttribute="leading" secondItem="5Xu-ar-NI9" secondAttribute="leadingMargin" id="gzc-Cs-8w9"/>
+                            <constraint firstAttribute="centerY" secondItem="Bvu-s0-Ef1" secondAttribute="centerY" constant="-1.5" id="kwF-jl-oU0"/>
+                            <constraint firstAttribute="centerY" secondItem="73x-uP-z8A" secondAttribute="centerY" constant="-1" id="nW8-7z-Ulb"/>
+                        </constraints>
+                    </tableViewCellContentView>
+                    <connections>
+                        <outlet property="imgTypeIcon" destination="Bvu-s0-Ef1" id="hnx-dN-B4t"/>
+                        <outlet property="lblEndTime" destination="Q7S-oj-vA8" id="Fly-ln-VLJ"/>
+                        <outlet property="lblItemName" destination="73x-uP-z8A" id="5te-F4-bOt"/>
+                        <outlet property="lblStartTime" destination="xfv-2Z-mz5" id="Wbz-YA-aBT"/>
+                    </connections>
+                </tableViewCell>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="jbU-Fd-Igd" secondAttribute="trailing" id="3Rm-IN-7g3"/>
+                <constraint firstItem="jbU-Fd-Igd" firstAttribute="top" secondItem="kqu-px-FQR" secondAttribute="bottom" id="8sA-Ev-Bym"/>
+                <constraint firstAttribute="bottom" secondItem="jbU-Fd-Igd" secondAttribute="bottom" id="AHv-9f-u9h"/>
+                <constraint firstItem="kqu-px-FQR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Cic-WA-J5N"/>
+                <constraint firstItem="jbU-Fd-Igd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Kg3-5I-5RT"/>
+                <constraint firstItem="kqu-px-FQR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RFF-FY-Zj5"/>
+                <constraint firstItem="jbU-Fd-Igd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="h03-bJ-1XG"/>
+                <constraint firstAttribute="trailing" secondItem="kqu-px-FQR" secondAttribute="trailing" id="kQB-Hl-jl1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Kg3-5I-5RT"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="266" y="353"/>
+        </view>
+    </objects>
+</document>

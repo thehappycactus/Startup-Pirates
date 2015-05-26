@@ -12,11 +12,6 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.view.backgroundColor = UIColor(
-			red: CGFloat(191) / 255.0,
-			green: CGFloat(231) / 255.0,
-			blue: CGFloat(251) / 255.0,
-			alpha: CGFloat(1.0))
 	}
 
 	override func didReceiveMemoryWarning() {
