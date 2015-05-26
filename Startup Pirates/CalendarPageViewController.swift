@@ -87,7 +87,7 @@ class CalendarPageViewController: UIPageViewController, UIPageViewControllerData
             return CalendarViewController()
         }
         
-        var vc: CalendarViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarDay1") as! CalendarViewController
+        var vc: CalendarViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CalendarDay") as! CalendarViewController
         
         vc.curDay = self.fullCalendar[index]
         vc.curDayIdx = index

@@ -23,6 +23,14 @@ class CalendarItem {
 		self.type = CalendarType(rawValue: type)!
 	}
 	
+	init() {
+		self.title = ""
+		self.details = ""
+		self.startTime = Date.toDate(("1432663414").doubleValue)
+		self.endTime = Date.toDate(("1432663414").doubleValue)
+		self.type = CalendarType(rawValue: 1)!
+	}
+	
 	enum CalendarType: Int {
 		case Pitch = 1, EntrepreneurTalk, LessonsLearned, TeamBuilding, Registration, AskMentor, OpenMeetup, Workshop, Lunch, WorkSession, TeamDefinition
 	}

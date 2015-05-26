@@ -13,9 +13,15 @@ class CalendarItemDetailViewController: UIViewController {
 	@IBOutlet weak var lblTitle: UILabel!
 	@IBOutlet weak var lblDescription: UILabel!
 	@IBOutlet weak var lblStartEndTimes: UILabel!
+	
+	var calItem: CalendarItem = CalendarItem()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		lblTitle.text = calItem.title
+		lblDescription.text = calItem.details
+		lblStartEndTimes.text = "\(Date.toTimeString(date: calItem.startTime)) - \(Date.toTimeString(date: calItem.endTime))"
 
         // Do any additional setup after loading the view.
     }
