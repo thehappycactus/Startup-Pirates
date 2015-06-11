@@ -20,18 +20,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="sq3-QP-OVI">
                                 <rect key="frame" x="21" y="0.0" width="563" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SP logo shadow" translatesAutoresizingMaskIntoConstraints="NO" id="iwq-np-LO4">
-                                <rect key="frame" x="16" y="28" width="568" height="261"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xib-Qn-M8t">
                                 <rect key="frame" x="175" y="380" width="250" height="30"/>
-                                <state key="normal" title="Shiver Me Timbers!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Shiver Me Timbers!"/>
                                 <connections>
                                     <action selector="btnShiver_touch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Abz-QZ-XXw"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tlc-no-vM8">
+                                <rect key="frame" x="0.0" y="231" width="600" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="G86-I7-SZe"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Bp6-cu-aEg"/>
+                                </connections>
+                            </pickerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SP logo shadow" translatesAutoresizingMaskIntoConstraints="NO" id="iwq-np-LO4">
+                                <rect key="frame" x="16" y="28" width="568" height="261"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -44,6 +49,7 @@
                             <constraint firstAttribute="centerY" secondItem="Xib-Qn-M8t" secondAttribute="centerY" constant="-247" id="Bdp-17-JE0"/>
                             <constraint firstItem="sq3-QP-OVI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EoK-sI-Y9r"/>
                             <constraint firstAttribute="centerY" secondItem="iwq-np-LO4" secondAttribute="centerY" constant="141.5" id="G3h-nG-HvY"/>
+                            <constraint firstAttribute="centerX" secondItem="tlc-no-vM8" secondAttribute="centerX" id="GBn-ZV-NpD"/>
                             <constraint firstItem="iwq-np-LO4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QEC-qf-mOu"/>
                             <constraint firstItem="iwq-np-LO4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="TIz-Ta-Rap"/>
                             <constraint firstAttribute="centerX" secondItem="Xib-Qn-M8t" secondAttribute="centerX" id="TMQ-W1-JWN"/>
@@ -52,11 +58,13 @@
                             <constraint firstAttribute="centerX" secondItem="iwq-np-LO4" secondAttribute="centerX" constant="-0.5" id="Vvg-5d-rTT"/>
                             <constraint firstAttribute="centerX" secondItem="Xib-Qn-M8t" secondAttribute="centerX" constant="-15" id="WtM-GO-zSZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xib-Qn-M8t" secondAttribute="bottom" constant="190" id="bbN-Ze-rqN"/>
+                            <constraint firstItem="tlc-no-vM8" firstAttribute="top" secondItem="iwq-np-LO4" secondAttribute="bottom" constant="-58" id="m3t-eZ-IAJ"/>
                             <constraint firstItem="iwq-np-LO4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="nGA-yz-cK0"/>
                             <constraint firstAttribute="centerX" secondItem="iwq-np-LO4" secondAttribute="centerX" id="oEC-yt-P21"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xib-Qn-M8t" secondAttribute="bottom" constant="35" id="rWm-4x-GVS"/>
                             <constraint firstItem="sq3-QP-OVI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ttS-wD-emh"/>
                             <constraint firstAttribute="trailing" secondItem="sq3-QP-OVI" secondAttribute="trailing" id="vcP-RW-lS2"/>
+                            <constraint firstItem="Xib-Qn-M8t" firstAttribute="top" secondItem="tlc-no-vM8" secondAttribute="bottom" constant="-13" id="yFX-8L-FJc"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -75,6 +83,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="programPicker" destination="tlc-no-vM8" id="7rK-dt-itM"/>
                         <segue destination="hzM-yc-N8E" kind="show" identifier="showTabs" id="dbr-7g-vXj"/>
                     </connections>
                 </viewController>
@@ -678,19 +687,19 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Agenda Item Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvK-By-FIV">
                                 <rect key="frame" x="48" y="74" width="334" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Agenda item description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJO-72-0mQ">
                                 <rect key="frame" x="16" y="134" width="568" height="208"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start Time - End Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8z-bT-K47">
                                 <rect key="frame" x="16" y="105" width="486" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PHr-st-GRv">

@@ -25,7 +25,7 @@ class CalendarTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 	
-	func setBackgroundColor(type: CalendarItem.CalendarType) {
+	func setBackgroundColor(type: AgendaItem.AgendaType) {
 		var bgColor = UIColor()
 		var typeIcon = UIImage()
 	

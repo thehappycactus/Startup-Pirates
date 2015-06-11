@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440CAE021B277A7E00058BDE /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CAE011B277A7E00058BDE /* Program.swift */; };
+		440CAE041B277C6100058BDE /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CAE031B277C6100058BDE /* SwiftyJSON.swift */; };
+		440CAE061B277D5B00058BDE /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CAE051B277D5B00058BDE /* Services.swift */; };
 		44578DF71B1369E800FEC19C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44578DF61B1369E800FEC19C /* SettingsViewController.swift */; };
 		449753841B14BEB70015C7CC /* CalendarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449753831B14BEB70015C7CC /* CalendarPageViewController.swift */; };
 		449753861B14CEBD0015C7CC /* CalendarItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449753851B14CEBD0015C7CC /* CalendarItemDetailViewController.swift */; };
@@ -19,7 +22,7 @@
 		44D39ECE1B02DA44008864BE /* Startup_PiratesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D39ECD1B02DA44008864BE /* Startup_PiratesTests.swift */; };
 		44D39ED81B02DC66008864BE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D39ED71B02DC66008864BE /* UIColor.swift */; };
 		44D39EDA1B02F60F008864BE /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D39ED91B02F60F008864BE /* CalendarTableViewCell.swift */; };
-		44D39EDC1B02F637008864BE /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D39EDB1B02F637008864BE /* CalendarItem.swift */; };
+		44D39EDC1B02F637008864BE /* AgendaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D39EDB1B02F637008864BE /* AgendaItem.swift */; };
 		44D39EE11B02F9E9008864BE /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D39EE01B02F9E9008864BE /* CalendarViewController.swift */; };
 		44D39EE31B03DB51008864BE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D39EE21B03DB51008864BE /* Date.swift */; };
 		44D39EE61B044277008864BE /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D39EE51B044277008864BE /* Guest.swift */; };
@@ -43,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		440CAE011B277A7E00058BDE /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		440CAE031B277C6100058BDE /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		440CAE051B277D5B00058BDE /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		44578DF61B1369E800FEC19C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		449753831B14BEB70015C7CC /* CalendarPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPageViewController.swift; sourceTree = "<group>"; };
 		449753851B14CEBD0015C7CC /* CalendarItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarItemDetailViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +65,7 @@
 		44D39ECD1B02DA44008864BE /* Startup_PiratesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Startup_PiratesTests.swift; sourceTree = "<group>"; };
 		44D39ED71B02DC66008864BE /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		44D39ED91B02F60F008864BE /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
-		44D39EDB1B02F637008864BE /* CalendarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
+		44D39EDB1B02F637008864BE /* AgendaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaItem.swift; sourceTree = "<group>"; };
 		44D39EE01B02F9E9008864BE /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		44D39EE21B03DB51008864BE /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		44D39EE51B044277008864BE /* Guest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
@@ -163,7 +169,8 @@
 		44D39EDD1B02F63E008864BE /* models */ = {
 			isa = PBXGroup;
 			children = (
-				44D39EDB1B02F637008864BE /* CalendarItem.swift */,
+				44D39EDB1B02F637008864BE /* AgendaItem.swift */,
+				440CAE011B277A7E00058BDE /* Program.swift */,
 				44D39EE51B044277008864BE /* Guest.swift */,
 				44D39EEB1B04E108008864BE /* Sponsor.swift */,
 			);
@@ -174,7 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				44D39EE21B03DB51008864BE /* Date.swift */,
+				440CAE051B277D5B00058BDE /* Services.swift */,
 				44D39ED71B02DC66008864BE /* UIColor.swift */,
+				440CAE031B277C6100058BDE /* SwiftyJSON.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -279,8 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440CAE021B277A7E00058BDE /* Program.swift in Sources */,
 				449753861B14CEBD0015C7CC /* CalendarItemDetailViewController.swift in Sources */,
 				44D39EEC1B04E108008864BE /* Sponsor.swift in Sources */,
+				440CAE061B277D5B00058BDE /* Services.swift in Sources */,
 				44D39EBA1B02DA44008864BE /* ViewController.swift in Sources */,
 				44D39ED81B02DC66008864BE /* UIColor.swift in Sources */,
 				44D39EE61B044277008864BE /* Guest.swift in Sources */,
@@ -289,7 +300,8 @@
 				44578DF71B1369E800FEC19C /* SettingsViewController.swift in Sources */,
 				44D39EF41B0653E1008864BE /* SponsorDetailViewController.swift in Sources */,
 				44D39EE81B0445A5008864BE /* GuestViewController.swift in Sources */,
-				44D39EDC1B02F637008864BE /* CalendarItem.swift in Sources */,
+				44D39EDC1B02F637008864BE /* AgendaItem.swift in Sources */,
+				440CAE041B277C6100058BDE /* SwiftyJSON.swift in Sources */,
 				44D39EEE1B04E1FC008864BE /* SponsorViewController.swift in Sources */,
 				44D39EEA1B0445E4008864BE /* GuestTableViewCell.swift in Sources */,
 				44D39EF01B04E26F008864BE /* SponsorTableViewCell.swift in Sources */,

@@ -9,8 +9,9 @@
 import UIKit
 
 class CalendarViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
-	var curDay: Array<CalendarItem> = Array<CalendarItem>()
+	var programId: Int = 0
 	var curDayIdx: Int = 0
+	var curDay: Array<AgendaItem> = Array<AgendaItem>()
 	
 	@IBOutlet weak var lblCalendarDay: UILabel!
 	@IBOutlet weak var tblCalendar: UITableView!
@@ -65,7 +66,7 @@ class CalendarViewController: UITableViewController, UITableViewDataSource, UITa
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if (segue.identifier == "ShowCalendarDetail") {
 			var calDetailView = segue.destinationViewController as! CalendarItemDetailViewController
-			calDetailView.calItem = sender as! CalendarItem
+			calDetailView.calItem = sender as! AgendaItem
 		}
     }
 	

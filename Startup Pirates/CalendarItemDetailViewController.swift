@@ -14,7 +14,7 @@ class CalendarItemDetailViewController: UIViewController {
 	@IBOutlet weak var lblDescription: UILabel!
 	@IBOutlet weak var lblStartEndTimes: UILabel!
 	
-	var calItem: CalendarItem = CalendarItem()
+	var calItem: AgendaItem = AgendaItem()
 
     override func viewDidLoad() {
         super.viewDidLoad()
