@@ -13,6 +13,9 @@
 		44578DF71B1369E800FEC19C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44578DF61B1369E800FEC19C /* SettingsViewController.swift */; };
 		449753841B14BEB70015C7CC /* CalendarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449753831B14BEB70015C7CC /* CalendarPageViewController.swift */; };
 		449753861B14CEBD0015C7CC /* CalendarItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449753851B14CEBD0015C7CC /* CalendarItemDetailViewController.swift */; };
+		44A67D6F1B309DF0007CD329 /* PrizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A67D6E1B309DF0007CD329 /* PrizeViewController.swift */; };
+		44A67D711B309E1C007CD329 /* Prize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A67D701B309E1C007CD329 /* Prize.swift */; };
+		44A67D731B309FD4007CD329 /* PrizeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A67D721B309FD4007CD329 /* PrizeTableViewCell.swift */; };
 		44D39EB51B02DA44008864BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D39EB41B02DA44008864BE /* AppDelegate.swift */; };
 		44D39EB81B02DA44008864BE /* Startup_Pirates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44D39EB61B02DA44008864BE /* Startup_Pirates.xcdatamodeld */; };
 		44D39EBA1B02DA44008864BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D39EB91B02DA44008864BE /* ViewController.swift */; };
@@ -52,6 +55,9 @@
 		44578DF61B1369E800FEC19C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		449753831B14BEB70015C7CC /* CalendarPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPageViewController.swift; sourceTree = "<group>"; };
 		449753851B14CEBD0015C7CC /* CalendarItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarItemDetailViewController.swift; sourceTree = "<group>"; };
+		44A67D6E1B309DF0007CD329 /* PrizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrizeViewController.swift; sourceTree = "<group>"; };
+		44A67D701B309E1C007CD329 /* Prize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prize.swift; sourceTree = "<group>"; };
+		44A67D721B309FD4007CD329 /* PrizeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrizeTableViewCell.swift; sourceTree = "<group>"; };
 		44D39EAF1B02DA44008864BE /* Startup Pirates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Startup Pirates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D39EB31B02DA44008864BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44D39EB41B02DA44008864BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 				44D39EE71B0445A5008864BE /* GuestViewController.swift */,
 				44D39EE91B0445E4008864BE /* GuestTableViewCell.swift */,
 				44D39EF11B063B5F008864BE /* GuestDetailViewController.swift */,
+				44A67D6E1B309DF0007CD329 /* PrizeViewController.swift */,
+				44A67D721B309FD4007CD329 /* PrizeTableViewCell.swift */,
 				44D39EED1B04E1FC008864BE /* SponsorViewController.swift */,
 				44D39EEF1B04E26F008864BE /* SponsorTableViewCell.swift */,
 				44D39EF31B0653E1008864BE /* SponsorDetailViewController.swift */,
@@ -173,6 +181,7 @@
 				440CAE011B277A7E00058BDE /* Program.swift */,
 				44D39EE51B044277008864BE /* Guest.swift */,
 				44D39EEB1B04E108008864BE /* Sponsor.swift */,
+				44A67D701B309E1C007CD329 /* Prize.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -288,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A67D711B309E1C007CD329 /* Prize.swift in Sources */,
 				440CAE021B277A7E00058BDE /* Program.swift in Sources */,
 				449753861B14CEBD0015C7CC /* CalendarItemDetailViewController.swift in Sources */,
 				44D39EEC1B04E108008864BE /* Sponsor.swift in Sources */,
@@ -300,6 +310,8 @@
 				44578DF71B1369E800FEC19C /* SettingsViewController.swift in Sources */,
 				44D39EF41B0653E1008864BE /* SponsorDetailViewController.swift in Sources */,
 				44D39EE81B0445A5008864BE /* GuestViewController.swift in Sources */,
+				44A67D6F1B309DF0007CD329 /* PrizeViewController.swift in Sources */,
+				44A67D731B309FD4007CD329 /* PrizeTableViewCell.swift in Sources */,
 				44D39EDC1B02F637008864BE /* AgendaItem.swift in Sources */,
 				440CAE041B277C6100058BDE /* SwiftyJSON.swift in Sources */,
 				44D39EEE1B04E1FC008864BE /* SponsorViewController.swift in Sources */,
@@ -442,6 +454,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -453,6 +466,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

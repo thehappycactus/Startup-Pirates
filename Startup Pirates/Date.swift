@@ -26,6 +26,32 @@ class Date {
 		return date!
 	}
 	
+//	class func toDate(dateString: String) -> NSDate {
+//		// 2015-06-11T20:00:03.000Z
+//		// Convert from epoch
+//		// Convert to string or NSDate, not sure yet
+//		
+//		let timeStringFormatter = NSDateFormatter()
+//		timeStringFormatter.dateFormat = "HH:MM"
+//		timeStringFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+//		timeStringFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+//		timeStringFormatter.timeZone = NSTimeZone()
+//		
+//		
+//	}
+
+	class func toDateFromUTC(dateString: String) -> NSDate {
+		let timeFormat = NSDateFormatter()
+		timeFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+		let date = timeFormat.dateFromString(dateString)
+//		if let parsedDateTimeString = timeFormat.dateFromString(dateString) {
+//			timeFormat.stringFromDate(parsedDateTimeString)
+//		} else {
+//			println("Could not parse date")
+//		}
+		return date!
+	}
+	
 	// Convert UTC Date to NSDate
 	class func toDate(dateDub: Double) -> NSDate {
 		//var dateConv = dateDub / 1000		// Unix TS is in millis (in jma, why not here??), so divide to rid yourself of them

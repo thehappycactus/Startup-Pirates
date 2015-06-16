@@ -40,9 +40,10 @@ class Services {
 		return programArr
 	}
 	
-	class func getAgenda(programId: Int) -> Array<AgendaItem> {
-		var fullUrl = ""
-		var agendaArr = Array<AgendaItem>()
+	class func getAgenda(programId: Int) -> [Array<AgendaItem>] {
+		var fullUrl = "\(url)/programs/\(programId)/agenda"
+		var agendaArr = Array<Array<AgendaItem>>()
+		var agendaDayArr = Array<AgendaItem>()
 		
 		var request: NSMutableURLRequest = NSMutableURLRequest()
 		request.URL = NSURL(string: fullUrl)
@@ -55,15 +56,20 @@ class Services {
 		
 		let json = JSON(data: data)
 		for (key: String, subJson: JSON) in json {
-			var item = AgendaItem(
-				title: subJson["title"].stringValue,
-				details: subJson["details"].stringValue,
-				day: subJson["day"].intValue,
-				startTime: subJson["startTime"].stringValue,
-				endTime: subJson["endTime"].stringValue,
-				type: subJson["type"].intValue)
+			for (subKey: String, finalJson: JSON) in subJson {
+				var item = AgendaItem(
+					title: finalJson["title"].stringValue,
+					details: finalJson["details"].stringValue,
+					day: finalJson["day"].intValue,
+					startTime: finalJson["start_time"].stringValue,
+					endTime: finalJson["end_time"].stringValue,
+					type: finalJson["agenda_type"].intValue)
+				
+				agendaDayArr.append(item)
+			}
 			
-			agendaArr.append(item)
+			agendaArr.append(agendaDayArr)
+			agendaDayArr = Array<AgendaItem>()
 		}
 		
 		return agendaArr
@@ -85,19 +91,50 @@ class Services {
 		let json = JSON(data: data)
 		
 		for (key: String, subJson: JSON) in json {
-			var name = subJson["fName"].stringValue + subJson["lName"].stringValue
+			var name = subJson["f_name"].stringValue + " " + subJson["l_name"].stringValue
 			var guest = Guest(
 				id: subJson["id"].intValue,
 				name: name, shortInfo:
-				subJson["shortInfo"].stringValue,
-				bio: subJson["longInfo"].stringValue,
-				type: subJson["type"].intValue,
+				subJson["short_info"].stringValue,
+				bio: subJson["long_info"].stringValue,
+				type: subJson["guest_type"].intValue,
 				imgURL: subJson["img_loc"].stringValue)
 			
 			guestArr.append(guest)
 		}
 		
 		return guestArr
+	}
+	
+	class func getPrizes(programId: Int) -> Array<Guest> {
+		var fullUrl = "\(url)/programs/\(programId)/prize"
+		var guestArr = Array<Prize>()
+		
+		var request: NSMutableURLRequest = NSMutableURLRequest()
+		request.URL = NSURL(string: fullUrl)
+		request.HTTPMethod = "GET"
+		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+		
+		var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?> = nil
+		
+		var data: NSData! = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: NSErrorPointer())
+		
+		let json = JSON(data: data)
+		
+		for (key: String, subJson: JSON) in json {
+			var name = subJson["f_name"].stringValue + " " + subJson["l_name"].stringValue
+			var guest = Prize(
+				id: subJson["id"].intValue,
+				shortDesc: subJson["short_desc"].stringValue,
+				longDes: subJson["long_desc"].stringValue,
+				name: subJson["name"].stringValue,
+				imgURL: subJson["img_loc"].stringValue,
+				url: subJson["url"].stringValue)
+			
+			prizeArr.append(guest)
+		}
+		
+		return prizeArr
 	}
 
 }

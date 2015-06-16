@@ -13,18 +13,6 @@ class GuestViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		var guest1 = Guest(id: 0, name: "Mike Ames", shortInfo: "The Biz Garage", bio: "Owner of The Biz Garage!", type: 2, imgURL: "http://startup-pirates.s3.amazonaws.com/people/photos/000/000/962/medium/Ames_Profile_Pic.JPG")
-		var guest2 = Guest(id: 1, name: "Isabel Marques", shortInfo: "Startup Pirates @ Atlanta", bio: "Organizer of Startup Pirates @Atlanta", type: 1, imgURL: "http://startup-pirates.s3.amazonaws.com/people/photos/000/000/779/medium/isabel.jpg?1427134302")
-		var guest3 = Guest(id: 2, name: "Pedro Queiros", shortInfo: "Startup Pirates @ Atlanta", bio: "Organizer of Startup Pirates @ Atlanta", type: 2, imgURL: "http://startup-pirates.s3.amazonaws.com/people/photos/000/000/780/medium/pedro.jpg?1427134360")
-		var guest4 = Guest(id: 3, name: "Mary Gezo", shortInfo: "Startup Pirates @ Atlanta",  bio: "Social Media Organizer of Startup Pirates @ Atlanta", type: 3, imgURL: "http://startup-pirates.s3.amazonaws.com/people/photos/000/000/870/medium/maryHeadShot.jpg?1429632973")
-		
-		guestList.append(guest1)
-		guestList.append(guest2)
-		guestList.append(guest3)
-		guestList.append(guest4)
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

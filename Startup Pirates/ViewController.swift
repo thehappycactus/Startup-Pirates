@@ -10,8 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 	@IBOutlet weak var programPicker: UIPickerView!
+	
+	var tabs: UITabBarController!
+	var pageTab: CalendarPageViewController!
+	var guestTab: GuestViewController!
+	
 	var programs: Array<Program> = Array<Program>()
-	var selectedProgId: Int = 0
+	var selectedProgId: Int = 1
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -36,31 +41,26 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 	}
 	
 	func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-		selectedProgId = row
+		selectedProgId = programs[row].id
 	}
 
 	@IBAction func btnShiver_touch(sender: AnyObject) {
-		var agendaArr: Array<AgendaItem> = Services.getAgenda(selectedProgId)
-		var fullAgenda: [Array<AgendaItem>] = [Array<AgendaItem>()]
-		
-		var curDay = 0
-		var agendaDay: Array<AgendaItem>
-		for item in agendaArr {
-			if (curDay != item.day) {
-				agendaDay = Array<AgendaItem>()
-			}
-			
-			
-		}
-		
-		performSegueWithIdentifier("showTabs", sender: agendaArr)
+		var fullAgenda: [Array<AgendaItem>] = Services.getAgenda(selectedProgId)
+		var guestList: Array<Guest> = Services.getGuests(selectedProgId)
+		performSegueWithIdentifier("showTabs", sender: [fullAgenda, guestList])
 	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if (segue.identifier == "showTabs") {
-			var tabView = segue.destinationViewController as! CalendarPageViewController
-			let agenda = sender as! Array<AgendaItem>
-			tabView.fullAgenda = [agenda]
+			self.tabs = segue.destinationViewController as! UITabBarController
+			self.pageTab = self.tabs.viewControllers?.first as! CalendarPageViewController
+			self.guestTab = self.tabs.viewControllers?[1] as! GuestViewController
+			var data = sender as! NSArray
+			let agenda = data[0] as! [Array<AgendaItem>]
+			let guests = data[1] as! Array<Guest>
+			self.pageTab.fullAgenda = agenda
+			self.guestTab.guestList = guests
+			
 		}
 	}
 

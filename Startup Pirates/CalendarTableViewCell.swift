@@ -94,7 +94,7 @@ class CalendarTableViewCell: UITableViewCell {
 				alpha: CGFloat(0.75))
 			typeIcon = UIImage(named: "workshop")!
 			break
-		case .Lunch:
+		case .Meal:
 			bgColor = UIColor(
 				red: CGFloat(235) / 255.0,
 				green: CGFloat(235) / 255.0,
@@ -108,7 +108,7 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(230) / 255.0,
 				blue: CGFloat(230) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "work_session")!
+			typeIcon = UIImage(named: "working")!
 			break
 		case .TeamDefinition:
 			bgColor = UIColor(

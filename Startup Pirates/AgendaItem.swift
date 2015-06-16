@@ -20,8 +20,8 @@ class AgendaItem {
 		self.title = title
 		self.details = details
 		self.day = day
-		self.startTime = Date.toDate((startTime as NSString).doubleValue)
-		self.endTime = Date.toDate((endTime as NSString).doubleValue)
+		self.startTime = Date.toDateFromUTC(startTime)
+		self.endTime = Date.toDateFromUTC(endTime)
 		self.type = AgendaType(rawValue: type)!
 	}
 	
@@ -35,7 +35,7 @@ class AgendaItem {
 	}
 	
 	enum AgendaType: Int {
-		case Pitch = 1, EntrepreneurTalk, LessonsLearned, TeamBuilding, Registration, AskMentor, OpenMeetup, Workshop, Lunch, WorkSession, TeamDefinition
+		case Pitch = 1, EntrepreneurTalk, LessonsLearned, TeamBuilding, Registration, AskMentor, OpenMeetup, Workshop, Meal, WorkSession, TeamDefinition
 	}
 
 }
