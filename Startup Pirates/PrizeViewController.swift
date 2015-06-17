@@ -9,7 +9,7 @@
 import UIKit
 
 class PrizeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-	var prizeArr: Array<Prize> = Array<Prize>()
+	var prizeList: Array<Prize> = Array<Prize>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +27,14 @@ class PrizeViewController: UIViewController, UITableViewDelegate, UITableViewDat
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return prizeArr.count
+		return prizeList.count
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("PrizeCell", forIndexPath: indexPath) as! PrizeTableViewCell
-		cell.prizeImg!.image = prizeArr[indexPath.row].imgLoc
-		cell.lblName.text = prizeArr[indexPath.row].name
-		cell.lblDescription.text = prizeArr[indexPath.row].shortDesc
+		cell.prizeImg!.image = prizeList[indexPath.row].imgLoc
+		cell.lblName.text = prizeList[indexPath.row].name
+		cell.lblDescription.text = prizeList[indexPath.row].shortDesc
 		return cell
 	}
 

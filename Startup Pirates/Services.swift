@@ -106,9 +106,9 @@ class Services {
 		return guestArr
 	}
 	
-	class func getPrizes(programId: Int) -> Array<Guest> {
+	class func getPrizes(programId: Int) -> Array<Prize> {
 		var fullUrl = "\(url)/programs/\(programId)/prize"
-		var guestArr = Array<Prize>()
+		var prizeArr = Array<Prize>()
 		
 		var request: NSMutableURLRequest = NSMutableURLRequest()
 		request.URL = NSURL(string: fullUrl)
@@ -123,15 +123,15 @@ class Services {
 		
 		for (key: String, subJson: JSON) in json {
 			var name = subJson["f_name"].stringValue + " " + subJson["l_name"].stringValue
-			var guest = Prize(
+			var prize = Prize(
 				id: subJson["id"].intValue,
 				shortDesc: subJson["short_desc"].stringValue,
-				longDes: subJson["long_desc"].stringValue,
+				longDesc: subJson["long_desc"].stringValue,
 				name: subJson["name"].stringValue,
-				imgURL: subJson["img_loc"].stringValue,
+				imgLoc: subJson["img_loc"].stringValue,
 				url: subJson["url"].stringValue)
 			
-			prizeArr.append(guest)
+			prizeArr.append(prize)
 		}
 		
 		return prizeArr
