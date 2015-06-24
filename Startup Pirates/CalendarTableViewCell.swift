@@ -17,7 +17,6 @@ class CalendarTableViewCell: UITableViewCell {
 	
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -27,7 +26,6 @@ class CalendarTableViewCell: UITableViewCell {
 	
 	func setBackgroundColor(type: AgendaItem.AgendaType) {
 		var bgColor = UIColor()
-		var typeIcon = UIImage()
 	
 		switch(type) {
 		case .Pitch:
@@ -36,7 +34,6 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(240) / 255.0,
 				blue: CGFloat(255) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "pitch")!
 			break
 		case .EntrepreneurTalk:
 			bgColor = UIColor(
@@ -44,7 +41,6 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(240) / 255.0,
 				blue: CGFloat(245) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "entrepreneur_talk")!
 			break
 		case .LessonsLearned:
 			bgColor = UIColor(
@@ -52,7 +48,6 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(245) / 255.0,
 				blue: CGFloat(230) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "lessons_learned")!
 			break
 		case .TeamBuilding:
 			bgColor = UIColor(
@@ -60,7 +55,6 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(245) / 255.0,
 				blue: CGFloat(230) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "team_building")!
 			break
 		case .Registration:
 			bgColor = UIColor(
@@ -68,7 +62,6 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(240) / 255.0,
 				blue: CGFloat(245) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "registration")!
 			break
 		case .AskMentor:
 			bgColor = UIColor(
@@ -76,7 +69,6 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(240) / 255.0,
 				blue: CGFloat(230) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "ask_mentor")!
 			break
 		case .OpenMeetup:
 			bgColor = UIColor(
@@ -84,7 +76,6 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(245) / 255.0,
 				blue: CGFloat(230) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "open_meetup")!
 			break
 		case .Workshop:
 			bgColor = UIColor(
@@ -92,7 +83,6 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(250) / 255.0,
 				blue: CGFloat(255) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "workshop")!
 			break
 		case .Meal:
 			bgColor = UIColor(
@@ -100,7 +90,6 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(235) / 255.0,
 				blue: CGFloat(235) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "lunch")!
 			break
 		case .WorkSession:
 			bgColor = UIColor(
@@ -108,7 +97,6 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(230) / 255.0,
 				blue: CGFloat(230) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "working")!
 			break
 		case .TeamDefinition:
 			bgColor = UIColor(
@@ -116,14 +104,12 @@ class CalendarTableViewCell: UITableViewCell {
 				green: CGFloat(245) / 255.0,
 				blue: CGFloat(230) / 255.0,
 				alpha: CGFloat(0.75))
-			typeIcon = UIImage(named: "teams")!
 			break
 		default:
 			break
 		}
 		
 		self.viewForBaselineLayout()?.backgroundColor = bgColor
-		self.imgTypeIcon.image = typeIcon
 	}
 
 }

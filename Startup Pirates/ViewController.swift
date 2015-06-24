@@ -55,7 +55,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 		spinner.hidden = false
 		btnShiver.hidden = true
 	
-		dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.value), 0)) {
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
 			fullAgenda = Services.getAgenda(self.selectedProgId)
 			guestList = Services.getGuests(self.selectedProgId)
 			prizeList = Services.getPrizes(self.selectedProgId)

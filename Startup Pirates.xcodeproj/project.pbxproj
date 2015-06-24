@@ -11,6 +11,8 @@
 		440CAE041B277C6100058BDE /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CAE031B277C6100058BDE /* SwiftyJSON.swift */; };
 		440CAE061B277D5B00058BDE /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CAE051B277D5B00058BDE /* Services.swift */; };
 		44578DF71B1369E800FEC19C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44578DF61B1369E800FEC19C /* SettingsViewController.swift */; };
+		44887B0B1B3ADB8A00CFCEF8 /* PrizeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44887B0A1B3ADB8A00CFCEF8 /* PrizeDetailViewController.swift */; };
+		44887B0D1B3AE1E900CFCEF8 /* NSMutableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44887B0C1B3AE1E900CFCEF8 /* NSMutableString.swift */; };
 		449753841B14BEB70015C7CC /* CalendarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449753831B14BEB70015C7CC /* CalendarPageViewController.swift */; };
 		449753861B14CEBD0015C7CC /* CalendarItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449753851B14CEBD0015C7CC /* CalendarItemDetailViewController.swift */; };
 		44A67D6F1B309DF0007CD329 /* PrizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A67D6E1B309DF0007CD329 /* PrizeViewController.swift */; };
@@ -53,6 +55,8 @@
 		440CAE031B277C6100058BDE /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		440CAE051B277D5B00058BDE /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		44578DF61B1369E800FEC19C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		44887B0A1B3ADB8A00CFCEF8 /* PrizeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrizeDetailViewController.swift; sourceTree = "<group>"; };
+		44887B0C1B3AE1E900CFCEF8 /* NSMutableString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableString.swift; sourceTree = "<group>"; };
 		449753831B14BEB70015C7CC /* CalendarPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPageViewController.swift; sourceTree = "<group>"; };
 		449753851B14CEBD0015C7CC /* CalendarItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarItemDetailViewController.swift; sourceTree = "<group>"; };
 		44A67D6E1B309DF0007CD329 /* PrizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrizeViewController.swift; sourceTree = "<group>"; };
@@ -125,14 +129,15 @@
 			children = (
 				44D39EB41B02DA44008864BE /* AppDelegate.swift */,
 				44D39EB91B02DA44008864BE /* ViewController.swift */,
-				44D39EE01B02F9E9008864BE /* CalendarViewController.swift */,
 				449753831B14BEB70015C7CC /* CalendarPageViewController.swift */,
+				44D39EE01B02F9E9008864BE /* CalendarViewController.swift */,
 				44D39ED91B02F60F008864BE /* CalendarTableViewCell.swift */,
 				449753851B14CEBD0015C7CC /* CalendarItemDetailViewController.swift */,
 				44D39EE71B0445A5008864BE /* GuestViewController.swift */,
 				44D39EE91B0445E4008864BE /* GuestTableViewCell.swift */,
 				44D39EF11B063B5F008864BE /* GuestDetailViewController.swift */,
 				44A67D6E1B309DF0007CD329 /* PrizeViewController.swift */,
+				44887B0A1B3ADB8A00CFCEF8 /* PrizeDetailViewController.swift */,
 				44A67D721B309FD4007CD329 /* PrizeTableViewCell.swift */,
 				44D39EED1B04E1FC008864BE /* SponsorViewController.swift */,
 				44D39EEF1B04E26F008864BE /* SponsorTableViewCell.swift */,
@@ -192,6 +197,7 @@
 				44D39EE21B03DB51008864BE /* Date.swift */,
 				440CAE051B277D5B00058BDE /* Services.swift */,
 				44D39ED71B02DC66008864BE /* UIColor.swift */,
+				44887B0C1B3AE1E900CFCEF8 /* NSMutableString.swift */,
 				440CAE031B277C6100058BDE /* SwiftyJSON.swift */,
 			);
 			name = utils;
@@ -246,6 +252,7 @@
 				TargetAttributes = {
 					44D39EAE1B02DA43008864BE = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 4X3ARCD4KR;
 					};
 					44D39EC61B02DA44008864BE = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -297,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44887B0B1B3ADB8A00CFCEF8 /* PrizeDetailViewController.swift in Sources */,
 				44A67D711B309E1C007CD329 /* Prize.swift in Sources */,
 				440CAE021B277A7E00058BDE /* Program.swift in Sources */,
 				449753861B14CEBD0015C7CC /* CalendarItemDetailViewController.swift in Sources */,
@@ -313,6 +321,7 @@
 				44A67D6F1B309DF0007CD329 /* PrizeViewController.swift in Sources */,
 				44A67D731B309FD4007CD329 /* PrizeTableViewCell.swift in Sources */,
 				44D39EDC1B02F637008864BE /* AgendaItem.swift in Sources */,
+				44887B0D1B3AE1E900CFCEF8 /* NSMutableString.swift in Sources */,
 				440CAE041B277C6100058BDE /* SwiftyJSON.swift in Sources */,
 				44D39EEE1B04E1FC008864BE /* SponsorViewController.swift in Sources */,
 				44D39EEA1B0445E4008864BE /* GuestTableViewCell.swift in Sources */,
@@ -450,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Startup Pirates/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -462,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Startup Pirates/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

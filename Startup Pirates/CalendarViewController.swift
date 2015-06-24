@@ -43,6 +43,7 @@ class CalendarViewController: UITableViewController, UITableViewDataSource, UITa
 		cell.lblItemName.text = calItem.title
 		cell.lblStartTime.text = Date.toTimeString(date: calItem.startTime)
 		cell.lblEndTime.text = Date.toTimeString(date: calItem.endTime)
+		cell.imgTypeIcon.image = calItem.icon
 		cell.setBackgroundColor(calItem.type)
 		
 		return cell

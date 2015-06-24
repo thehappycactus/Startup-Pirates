@@ -37,6 +37,20 @@ class PrizeViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		cell.lblDescription.text = prizeList[indexPath.row].shortDesc
 		return cell
 	}
+	
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		performSegueWithIdentifier("ShowPrizeDetail", sender: indexPath)
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if (segue.identifier == "ShowPrizeDetail") {
+			var prizeDetail = segue.destinationViewController as! PrizeDetailViewController
+			let idx = sender as! NSIndexPath
+			let prize = prizeList[idx.row]
+			
+			prizeDetail.prize = prize
+		}
+	}
 
     /*
     // MARK: - Navigation
