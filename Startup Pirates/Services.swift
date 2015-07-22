@@ -97,6 +97,7 @@ class Services {
 				name: name, shortInfo:
 				subJson["short_info"].stringValue,
 				bio: subJson["long_info"].stringValue,
+				url: subJson["url"].stringValue,
 				type: subJson["guest_type"].intValue,
 				imgURL: subJson["img_loc"].stringValue)
 			

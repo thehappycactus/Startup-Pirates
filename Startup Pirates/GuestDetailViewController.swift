@@ -14,6 +14,7 @@ class GuestDetailViewController: UIViewController {
 	@IBOutlet weak var lblName: UILabel!
 	@IBOutlet weak var lblShortInfo: UILabel!
 	@IBOutlet weak var lblBio: UILabel!
+	@IBOutlet weak var btnUrl: UIButton!
 	
 	var guest: Guest! = nil
 
@@ -23,6 +24,7 @@ class GuestDetailViewController: UIViewController {
         lblName.text = guest.name
 		lblBio.text = guest.bio
 		imgGuest.image = guest.image
+		btnUrl.setTitle(guest.url, forState: .Normal)
 		
 		setupTypeInfo()
     }
@@ -53,6 +55,11 @@ class GuestDetailViewController: UIViewController {
 		dismissViewControllerAnimated(true, completion: nil)
 	}
 
+	@IBAction func btnUrl_touch(sender: UIButton) {
+		let targetUrl = NSURL(string: guest.url)
+		let app = UIApplication.sharedApplication()
+		app.openURL(targetUrl!)
+	}
     /*
     // MARK: - Navigation
 

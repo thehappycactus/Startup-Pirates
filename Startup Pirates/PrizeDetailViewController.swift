@@ -11,9 +11,9 @@ import UIKit
 class PrizeDetailViewController: UIViewController {
 	@IBOutlet weak var lblPrizeText: UILabel!
 	@IBOutlet weak var lblPrizeGiver: UILabel!
-	@IBOutlet weak var lblUrl: UILabel!
 	@IBOutlet weak var lblBio: UILabel!
 	@IBOutlet weak var imgLogo: UIImageView!
+	@IBOutlet weak var btnUrl: UIButton!
 	
 	var prize: Prize! = nil
 
@@ -22,7 +22,7 @@ class PrizeDetailViewController: UIViewController {
 		
 		lblPrizeText.text = prize.shortDesc
 		lblPrizeGiver.text = prize.name
-		lblUrl.text = prize.url
+		btnUrl.setTitle(prize.url, forState: .Normal)
 		lblBio.text = prize.longDesc
 		imgLogo.image = prize.imgLoc
 		
@@ -46,5 +46,12 @@ class PrizeDetailViewController: UIViewController {
 	@IBAction func btnBack_touch(sender: UIButton) {
 		dismissViewControllerAnimated(true, completion: nil)
 	}
+	
+	@IBAction func btnUrl_touch(sender: UIButton) {
+		let targetUrl = NSURL(string: prize.url)
+		let app = UIApplication.sharedApplication()
+		app.openURL(targetUrl!)
+	}
+	
 
 }

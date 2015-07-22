@@ -14,14 +14,16 @@ class Guest {
 	var name: String
 	var shortInfo: String
 	var bio: String
+	var url: String
 	var image: UIImage!
 	var type: GuestType
 	
-	init(id: Int, name: String, shortInfo: String, bio: String, type: Int, imgURL: String) {
+	init(id: Int, name: String, shortInfo: String, bio: String, url: String, type: Int, imgURL: String) {
 		self.id = id
 		self.name = name
 		self.shortInfo = shortInfo
 		self.bio = bio
+		self.url = url
 		self.type = GuestType(rawValue: type)!
 		
 		let data = NSData(contentsOfURL: NSURL(string: imgURL)!)
