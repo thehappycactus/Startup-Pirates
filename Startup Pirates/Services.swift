@@ -59,7 +59,7 @@ class Services {
 			for (subKey: String, finalJson: JSON) in subJson {
 				var item = AgendaItem(
 					title: finalJson["title"].stringValue,
-					details: finalJson["details"].stringValue,
+					details: finalJson["info"].stringValue,
 					day: finalJson["day"].intValue,
 					startTime: finalJson["start_time"].stringValue,
 					endTime: finalJson["end_time"].stringValue,
@@ -108,7 +108,7 @@ class Services {
 	}
 	
 	class func getPrizes(programId: Int) -> Array<Prize> {
-		var fullUrl = "\(url)/programs/\(programId)/prize"
+		var fullUrl = "\(url)/programs/\(programId)/prizes"
 		var prizeArr = Array<Prize>()
 		
 		var request: NSMutableURLRequest = NSMutableURLRequest()
@@ -136,6 +136,36 @@ class Services {
 		}
 		
 		return prizeArr
+	}
+	
+	class func getSponsors(programId: Int) -> Array<Sponsor> {
+		var fullUrl = "\(url)/programs/\(programId)/sponsors"
+		var sponsorArr = Array<Sponsor>()
+		
+		var request: NSMutableURLRequest = NSMutableURLRequest()
+		request.URL = NSURL(string: fullUrl)
+		request.HTTPMethod = "GET"
+		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+		
+		var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?> = nil
+		
+		var data: NSData! = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: NSErrorPointer())
+		
+		let json = JSON(data: data)
+		
+		for (key: String, subJson: JSON) in json {
+			var spons = Sponsor(
+				id: subJson["id"].intValue,
+				name: subJson["name"].stringValue,
+				shortDesc: subJson["short_desc"].stringValue,
+				longDesc: subJson["long_desc"].stringValue,
+				url: subJson["url"].stringValue,
+				logo: subJson["img_loc"].stringValue)
+			
+			sponsorArr.append(spons)
+		}
+		
+		return sponsorArr
 	}
 
 }

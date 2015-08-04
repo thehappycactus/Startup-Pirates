@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 	var pageTab: CalendarPageViewController!
 	var guestTab: GuestViewController!
 	var prizeTab: PrizeViewController!
+	var sponsorTab: SponsorViewController!
 	
 	var programs: Array<Program> = Array<Program>()
 	var selectedProgId: Int = 1
@@ -51,6 +52,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 		var fullAgenda: [Array<AgendaItem>] = [Array<AgendaItem>()]
 		var guestList: Array<Guest> = Array<Guest>()
 		var prizeList: Array<Prize> = Array<Prize>()
+		var sponsorList: Array<Sponsor> = Array<Sponsor>()
 		
 		spinner.hidden = false
 		btnShiver.hidden = true
@@ -59,10 +61,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 			fullAgenda = Services.getAgenda(self.selectedProgId)
 			guestList = Services.getGuests(self.selectedProgId)
 			prizeList = Services.getPrizes(self.selectedProgId)
+			sponsorList = Services.getSponsors(self.selectedProgId)
 			
 			dispatch_async(dispatch_get_main_queue()) {
 				self.spinner.stopAnimating()
-				self.performSegueWithIdentifier("showTabs", sender: [fullAgenda, guestList, prizeList])
+				self.performSegueWithIdentifier("showTabs", sender: [fullAgenda, guestList, sponsorList, prizeList])
 			}
 		}
 		
@@ -74,16 +77,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 			self.tabs = segue.destinationViewController as! UITabBarController
 			self.pageTab = self.tabs.viewControllers?.first as! CalendarPageViewController
 			self.guestTab = self.tabs.viewControllers?[1] as! GuestViewController
-			// self.sponsorTab = self.tabs.viewControllers[2] as! SponsorViewController
+			self.sponsorTab = self.tabs.viewControllers?[2] as! SponsorViewController
 			self.prizeTab = self.tabs.viewControllers?[3] as! PrizeViewController
 			
 			var data = sender as! NSArray
 			let agenda = data[0] as! [Array<AgendaItem>]
 			let guests = data[1] as! Array<Guest>
-			let prizes = data[2] as! Array<Prize>
+			let sponsors = data[2] as! Array<Sponsor>
+			let prizes = data[3] as! Array<Prize>
 			
 			self.pageTab.fullAgenda = agenda
 			self.guestTab.guestList = guests
+			self.sponsorTab.sponsorList = sponsors
 			self.prizeTab.prizeList = prizes
 			
 			spinner.stopAnimating()

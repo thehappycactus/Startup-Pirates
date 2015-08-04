@@ -22,6 +22,7 @@ class CalendarItemDetailViewController: UIViewController {
 		lblTitle.text = calItem.title
 		lblDescription.text = calItem.details
 		lblStartEndTimes.text = "\(Date.toTimeString(date: calItem.startTime)) - \(Date.toTimeString(date: calItem.endTime))"
+		lblDescription.text = calItem.details
 		imgIcon.image = calItem.icon
 
         // Do any additional setup after loading the view.

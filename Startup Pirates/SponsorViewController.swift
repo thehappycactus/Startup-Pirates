@@ -14,11 +14,11 @@ class SponsorViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		var spons1 = Sponsor(id: 1, name: "Turner Broadcasting", details: "Turner is great", url: "http://turner.com", logo: "", prize: nil, type: 3)
-		var spons2 = Sponsor(id: 1, name: "Google For Enrepreneurs", details: "Google is oh so helpful", url: "https://www.googleforentrepreneurs.com/", logo: "", prize: nil, type: 2)
-		
-		sponsorList.append(spons1)
-		sponsorList.append(spons2)
+//		var spons1 = Sponsor(id: 1, name: "Turner Broadcasting", details: "Turner is great", url: "http://turner.com", logo: "", prize: nil, type: 3)
+//		var spons2 = Sponsor(id: 1, name: "Google For Enrepreneurs", details: "Google is oh so helpful", url: "https://www.googleforentrepreneurs.com/", logo: "", prize: nil, type: 2)
+//		
+//		sponsorList.append(spons1)
+//		sponsorList.append(spons2)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,10 +39,24 @@ class SponsorViewController: UIViewController, UITableViewDataSource, UITableVie
 		
 		let sponsor = sponsorList[indexPath.row]
 		cell.lblSponsorName.text = sponsor.name
-		cell.lblSponsorLevel.text = ""
+		cell.lblSponsorDetails.text = sponsor.shortDesc
 		cell.imgLogo.image = sponsor.logo
 		
 		return cell
+	}
+	
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		performSegueWithIdentifier("ShowSponsorDetail", sender: indexPath)
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if (segue.identifier == "ShowSponsorDetail") {
+			var sponsorDetail = segue.destinationViewController as! SponsorDetailViewController
+			let idx = sender as! NSIndexPath
+			let sponsor = sponsorList[idx.row]
+			
+			sponsorDetail.sponsor = sponsor
+		}
 	}
 
     /*

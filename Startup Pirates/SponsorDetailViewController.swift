@@ -11,9 +11,8 @@ import UIKit
 class SponsorDetailViewController: UIViewController {
 	@IBOutlet weak var imgLogo: UIImageView!
 	@IBOutlet weak var lblName: UILabel!
-	@IBOutlet weak var lblLevel: UILabel!
-	@IBOutlet weak var lblPrize: UILabel!
 	@IBOutlet weak var lblBio: UILabel!
+	@IBOutlet weak var btnUrl: UIButton!
 	
 	var sponsor: Sponsor! = nil
 
@@ -21,14 +20,11 @@ class SponsorDetailViewController: UIViewController {
         super.viewDidLoad()
 
         lblName.text = sponsor.name
-		lblBio.text = sponsor.details
+		lblBio.text = sponsor.longDesc
 		imgLogo.image = sponsor.logo
 		
-		if (sponsor.prize != nil) {
-			lblPrize.text = "Prize: \(sponsor.prize)"
-		} else {
-			lblPrize.text = "Prize: None"
-		}
+		var smallUrlLength = count(sponsor.url) - 7		// url with "http://" removed
+		btnUrl.setTitle(suffix(sponsor.url, smallUrlLength), forState: .Normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +32,12 @@ class SponsorDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+	@IBAction func btnURL_touch(sender: AnyObject) {
+		let targetUrl = NSURL(string: sponsor.url)
+		let app = UIApplication.sharedApplication()
+		app.openURL(targetUrl!)
+	}
+	
 	@IBAction func btnBack_touch(sender: UIButton) {
 		dismissViewControllerAnimated(true, completion: nil)
 	}

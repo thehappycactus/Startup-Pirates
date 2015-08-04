@@ -26,6 +26,11 @@ class AgendaItem {
 		self.endTime = Date.toDateFromUTC(endTime)
 		self.type = AgendaType(rawValue: type)!
 		self.icon = self.setIcon(self.type)
+		
+		var comps = NSDateComponents()
+		comps.hour = 5
+		
+		startTime
 	}
 	
 	init() {

@@ -10,7 +10,7 @@ import UIKit
 
 class SponsorTableViewCell: UITableViewCell {
 	@IBOutlet weak var lblSponsorName: UILabel!
-	@IBOutlet weak var lblSponsorLevel: UILabel!
+	@IBOutlet weak var lblSponsorDetails: UILabel!
 	@IBOutlet weak var imgLogo: UIImageView!
 
     override func awakeFromNib() {

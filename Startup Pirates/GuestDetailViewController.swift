@@ -24,7 +24,9 @@ class GuestDetailViewController: UIViewController {
         lblName.text = guest.name
 		lblBio.text = guest.bio
 		imgGuest.image = guest.image
-		btnUrl.setTitle(guest.url, forState: .Normal)
+		
+		var smallUrlLength = count(guest.url) - 7		// url with "http://" removed
+		btnUrl.setTitle(suffix(guest.url, smallUrlLength), forState: .Normal)
 		
 		setupTypeInfo()
     }
